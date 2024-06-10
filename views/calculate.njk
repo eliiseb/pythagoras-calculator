@@ -1,0 +1,26 @@
+{% extends 'partials/layout.njk' %}
+{% block title %}Pythagoras{% endblock %}
+
+{% block content %}
+    <h1>Püthagorase teoreem</h1>
+    
+    <br>
+    <div class="mb-3">
+        <p>Sisendandmed:</p>
+    </div>
+    <form action="/a" method="POST">
+        <div class="mb-3">
+            <label for="a" class="form-label">Kolmnurga külg A:
+            <input type="number" min="1" class="form-control" id="a" name="a">
+            </label>
+        </div>
+        <div class="mb-3">
+            <label for="b" class="form-label">Kolmnurga külg B:
+            <input type="number" min="1" class="form-control" id="b" name="b">
+            </label>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Arvuta" class="btn btn-primary">
+        </div>
+    </form>
+{% endblock %}

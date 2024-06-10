@@ -1,0 +1,34 @@
+{% extends 'partials/layout.njk' %}
+{% block title %}P&uuml;thagorase teoreem{% endblock %}
+
+{% block content %}
+    <h1>Püthagorase teoreem</h1>
+    
+    {% if a and b %}
+        <h3> Külg A = {{ a }}</h3>
+        <h3> Külg B = {{ b }}</h3>
+        <h3>{{ a }}<sup>2</sup> + {{ b }}<sup>2</sup> = {{ (c).toFixed(3) }}<sup>2</sup></h3>
+        <h3> {{ a * a }} + {{ b * b }} = {{ (c * c).toFixed(3) }}</h3>
+        <h3> Hüpotenuus C = {{ (c).toFixed(3) }}</h3>
+    {% endif %}
+
+    <br>
+    <div class="mb-3">
+        <p>Sisendandmed:</p>
+    </div>
+    <form action="/a" method="POST">
+        <div class="mb-3">
+            <label for="a" class="form-label">Kolmnurga külg A:
+            <input type="number" min="1" class="form-control" id="a" name="a">
+            </label>
+        </div>
+        <div class="mb-3">
+            <label for="b" class="form-label">Kolmnurga külg B:
+            <input type="number" min="1" class="form-control" id="b" name="b">
+            </label>
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Arvuta" class="btn btn-primary">
+        </div>
+    </form>
+{% endblock %}
